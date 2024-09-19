@@ -3,7 +3,7 @@
 
 body {
     font-family: Victor Mono;
-    color: rgb(73, 70, 70);
+    color: rgb(37, 35, 35);
     /* font-weight: 800; */
     background-image: linear-gradient(to right, #F2C2FF, #E0C3FC);
     height: 100vh; /* Asegura que el fondo ocupe toda la altura de la viewport */
@@ -40,11 +40,15 @@ body {
     grid-row: 1/3;
     grid-column: 2/3;
     text-align: center;
+    font-weight: 800;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 .header_container .subtitle{
     grid-row:2/4;
     grid-column: -3/-2;
     place-self: center;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Sección sobre mi */
@@ -56,16 +60,21 @@ body {
 .about_me_title{
     grid-column: 2/3;
     text-align: center;
+    font-weight: 800;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 .about_me_container .about_me_subtitle{
     grid-column: 1/4;
     padding: 0 30px;
+    font-weight: 400;
 }
 
 /* Sección de Proyectos */
 .projects_title{
     grid-column: 2/3;
     text-align: center;
+    font-weight: 800;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 .projects_section_container{
     display: grid;
@@ -78,17 +87,25 @@ body {
 
 .project {
     border-radius: 12px;
-    border:1px solid  rgb(73, 70, 70);
+    border:1px solid  rgb(37, 35, 35);
     padding: 20px;
     text-align: center;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.55) 1px 5px 15px;
+}
+
+.project-title{
+    font-weight: 800;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.project-description{
+    font-weight: 400;
 }
 .project:hover{
     transform: scale(1.0425);
     transition: 1s 
 }
 .project-img{
-    width: 300px;
+    width: 100%;
     margin-top: 10px;
     border-radius: 12px;
 }
@@ -96,23 +113,33 @@ body {
 .contact-section {
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(4,1fr);
+    grid-template-rows: repeat(3,1fr);
 }
 .contact_title{
     grid-column: 2/3;
     grid-row:1;
     text-align: center;    
+    font-weight: 800;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .contact-link-linkedIn{
     grid-column: 2;
     grid-row: 2/3;
     place-self: center;
+    font-weight: 800;
+    text-decoration: none;
+    color:  rgb(37, 35, 35);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 .contact-link-gmail {
     grid-column: 2;
     grid-row: 3/4;
     text-align: center;
+    font-weight: 800;
+    text-decoration: none;
+    color:  rgb(37, 35, 35);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -121,7 +148,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
     left: 0;
     width: 100%;
@@ -132,4 +159,5 @@ body {
     grid-column: 2/3;
     text-align: center;
     padding: 20px;
+    color: #fff;
 }
