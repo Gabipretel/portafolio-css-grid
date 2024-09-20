@@ -4,31 +4,12 @@
 body {
     font-family: Victor Mono;
     color: rgb(37, 35, 35);
-    /* font-weight: 800; */
     background-image: linear-gradient(to right, #F2C2FF, #E0C3FC);
     height: 100vh; /* Asegura que el fondo ocupe toda la altura de la viewport */
     margin: 0;
   }
 
-.container {
-    display: grid;
-    gap: 20px; /* Espacio entre elementos */
-
-    /* Para pantallas grandes (web) */
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual ancho */
-    
-    /* Para pantallas medianas (tablet) */
-    @media (max-width: 768px) {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual ancho */
-    }
-
-    /* Para pantallas pequeñas (móvil) */
-    @media (max-width: 576px) {
-        grid-template-columns: 1fr; /* 1 columna */
-    }
-}
-
-/* Para pantallas grandes 3 columnas de igual ancho */
+/* Para pantallas grandes: 3 columnas de igual ancho */
 
 /* Encabezado */
 .header_container{
@@ -70,6 +51,10 @@ body {
 }
 
 /* Sección de Proyectos */
+a{
+    all: unset;
+    cursor: pointer;
+}
 .projects_title{
     grid-column: 2/3;
     text-align: center;
@@ -96,6 +81,10 @@ body {
 .project-title{
     font-weight: 800;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.project-title:hover{
+    color: #FFF;
+    cursor: pointer;
 }
 .project-description{
     font-weight: 400;
@@ -141,7 +130,9 @@ body {
     color:  rgb(37, 35, 35);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
-
+.contact-link-linkedIn:hover,.contact-link-gmail:hover{
+    color: #FFF;
+}
 
 /* Pie de página */
 .footer{
@@ -160,4 +151,66 @@ body {
     text-align: center;
     padding: 20px;
     color: #fff;
+}
+
+
+/* Media Queries */
+
+/* Para tablet y similares: dos columnas */
+@media (max-width: 1024px) {
+    /* Establezco a todos los contenedores grid dos columnas */
+    .header_container, .about_me_container, .projects_section_container, .contact-section, .footer {
+        grid-template-columns: repeat(2, 1fr) ;
+    }
+    /* Estilos específicos de cada contenedor */
+    /* Sección Encabezado */
+    .header_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .header_container .title{
+        grid-column: 1 /span 2;
+    }
+    .header_container .subtitle{
+        grid-column: 1 /span 2;
+    }
+    
+    .about_me_container .about_me_title, .about_me_subtitle{
+        grid-column: 1 /span 2;
+    }
+    /* Sección Proyectos  */
+    .projects_section_container .project{
+        margin-bottom: 20px;
+    }
+    .projects_section_container :nth-child(1){
+        justify-self: center;
+        max-width: 400px;
+    }
+    .projects_section_container :nth-child(2){
+        justify-self: center;
+        max-width: 400px;
+    }
+    .projects_section_container :nth-child(3){
+        grid-column: 1 / -1;
+        justify-self: center;
+        max-width: 400px;
+    }
+    /* Sección Contacto */
+    .contact-section .contact_title , .contact-link-gmail, .contact-link-linkedIn{
+        grid-column: 1/span 2;
+    }
+    /* Sección footer */
+    .footer .footer-content{
+        grid-column: 1/span 2;
+    }
+}
+
+/* Para móvil y similares : una columna */
+@media (max-width: 768px) {
+    .header_container, .about_me_container, .projects_section_container, .contact-section, .footer {
+        grid-template-columns: 1fr;
+    }
+
+    .about_me_subtitle, .projects_section_container {
+        grid-column: 1;
+    }
 }
